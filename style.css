@@ -300,22 +300,10 @@ body {
     border-radius: 7px;
   }
   .verification-image {
-    margin-left: 0;
-    margin-top: 14px;
-    justify-content: center;
-    background: linear-gradient(120deg, #e6ffe2 0%, #fff 95%);
-    border-radius: 32px;
-    padding: 14px 8px 14px 8px;
-    min-width: 0;
-    max-width: 90vw;
-    width: 80vw;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
+    display: none;
   }
   .livreur-img {
-    width: 100px;
-    border-radius: 12px;
+    display: none;
   }
   .section-separator {
     height: 4px;

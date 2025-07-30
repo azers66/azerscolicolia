@@ -41,6 +41,10 @@
       const mainContent = document.getElementById('main-content');
       const contactBtnHtml = '<button class="contact-btn" style="margin-top:18px;">Nous contacter</button>';
 
+      /**
+       * Affiche le formulaire principal de vérification
+       * Cette fonction génère le HTML du formulaire avec le champ de saisie
+       */
       function renderForm() {
         mainContent.innerHTML = `
           <h2 class="main-title">Vérifier un livreur Colicoli</h2>
@@ -67,6 +71,10 @@
         bindContactBtn();
       }
 
+      /**
+       * Affiche la page de succès quand un code valide est saisi
+       * @param {string} num - Le numéro d'identification validé
+       */
       function renderSuccess(num) {
         mainContent.innerHTML = `
           <h2 class="main-title">Livreur vérifié</h2>
@@ -89,6 +97,113 @@
         bindContactBtn();
       }
 
+      /**
+       * Affiche la fiche d'information du livreur
+       * @param {string} num - Le numéro d'identification du livreur
+       */
+      function renderDriverInfo(num) {
+        mainContent.innerHTML = `
+          <h2 class="main-title">Fiche livreur Colicoli</h2>
+          <div class="verification-card" style="justify-content:center;">
+            <div class="verification-content" style="align-items:center;text-align:center;">
+              <div style="margin-bottom:18px;">
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="35" cy="35" r="35" fill="#e6ffe2"/>
+                  <path d="M20 36L32 48L50 24" stroke="#1a7f1a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div style="font-size:24px;font-weight:700;color:#1a7f1a;margin-bottom:10px;">Livreur vérifié</div>
+              <div style="font-size:20px;color:#222;margin-bottom:24px;">Numéro d'identification&nbsp;: <b>${num}</b></div>
+              
+              <div style="background:#f8f8f8;border-radius:12px;padding:20px;margin-bottom:20px;text-align:left;width:100%;max-width:400px;">
+                <div style="margin-bottom:16px;">
+                  <div style="font-size:14px;color:#666;margin-bottom:4px;">Nom complet</div>
+                  <div style="font-size:18px;font-weight:600;color:#222;">Thomas MARTIN</div>
+                </div>
+                <div style="margin-bottom:16px;">
+                  <div style="font-size:14px;color:#666;margin-bottom:4px;">Zone de livraison</div>
+                  <div style="font-size:18px;font-weight:600;color:#222;">Île-de-France</div>
+                </div>
+                <div style="margin-bottom:16px;">
+                  <div style="font-size:14px;color:#666;margin-bottom:4px;">Statut</div>
+                  <div style="font-size:18px;font-weight:600;color:#1a7f1a;">● Actif</div>
+                </div>
+                <div style="margin-bottom:16px;">
+                  <div style="font-size:14px;color:#666;margin-bottom:4px;">Numéro SIRET</div>
+                  <div style="font-size:18px;font-weight:600;color:#222;">928 851 864 00019</div>
+                </div>
+                <div>
+                  <div style="font-size:14px;color:#666;margin-bottom:4px;">Date d'embauche</div>
+                  <div style="font-size:18px;font-weight:600;color:#222;">15 mars 2024</div>
+                </div>
+              </div>
+              
+              <div class="bottom-row" style="justify-content:center;gap:16px;">
+                <button class="contact-btn">Nous contacter</button>
+                <button class="retry-btn" style="background:#fff;color:#054848;border:2px solid #054848;font-size:16px;font-weight:700;border-radius:7px;padding:10px 18px;cursor:pointer;transition:background 0.2s;">Nouvelle vérification</button>
+              </div>
+            </div>
+          </div>
+        `;
+        bindContactBtn();
+        bindRetryBtn();
+      }
+
+      /**
+       * Affiche la fiche d'information du livreur Simon Triolet
+       * @param {string} num - Le numéro d'identification du livreur
+       */
+      function renderDriverInfoSimon(num) {
+        mainContent.innerHTML = `
+          <h2 class="main-title">Fiche livreur Colicoli</h2>
+          <div class="verification-card" style="justify-content:center;">
+            <div class="verification-content" style="align-items:center;text-align:center;">
+              <div style="margin-bottom:18px;">
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="35" cy="35" r="35" fill="#e6ffe2"/>
+                  <path d="M20 36L32 48L50 24" stroke="#1a7f1a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div style="font-size:24px;font-weight:700;color:#1a7f1a;margin-bottom:10px;">Livreur vérifié</div>
+              <div style="font-size:20px;color:#222;margin-bottom:24px;">Numéro d'identification&nbsp;: <b>${num}</b></div>
+              
+              <div style="background:#f8f8f8;border-radius:12px;padding:20px;margin-bottom:20px;text-align:left;width:100%;max-width:400px;">
+                <div style="margin-bottom:16px;">
+                  <div style="font-size:14px;color:#666;margin-bottom:4px;">Nom complet</div>
+                  <div style="font-size:18px;font-weight:600;color:#222;">Simon TRIOLET</div>
+                </div>
+                <div style="margin-bottom:16px;">
+                  <div style="font-size:14px;color:#666;margin-bottom:4px;">Zone de livraison</div>
+                  <div style="font-size:18px;font-weight:600;color:#222;">Île-de-France</div>
+                </div>
+                <div style="margin-bottom:16px;">
+                  <div style="font-size:14px;color:#666;margin-bottom:4px;">Statut</div>
+                  <div style="font-size:18px;font-weight:600;color:#1a7f1a;">● Actif</div>
+                </div>
+                <div style="margin-bottom:16px;">
+                  <div style="font-size:14px;color:#666;margin-bottom:4px;">Numéro SIRET</div>
+                  <div style="font-size:18px;font-weight:600;color:#222;">928 851 864 00019</div>
+                </div>
+                <div>
+                  <div style="font-size:14px;color:#666;margin-bottom:4px;">Date d'embauche</div>
+                  <div style="font-size:18px;font-weight:600;color:#222;">8 janvier 2024</div>
+                </div>
+              </div>
+              
+              <div class="bottom-row" style="justify-content:center;gap:16px;">
+                <button class="contact-btn">Nous contacter</button>
+                <button class="retry-btn" style="background:#fff;color:#054848;border:2px solid #054848;font-size:16px;font-weight:700;border-radius:7px;padding:10px 18px;cursor:pointer;transition:background 0.2s;">Nouvelle vérification</button>
+              </div>
+            </div>
+          </div>
+        `;
+        bindContactBtn();
+        bindRetryBtn();
+      }
+
+      /**
+       * Affiche la page d'erreur quand un code invalide est saisi
+       */
       function renderError() {
         mainContent.innerHTML = `
           <h2 class="main-title">Numéro d’identification mauvais</h2>
@@ -112,6 +227,10 @@
         bindRetryBtn();
       }
 
+      /**
+       * Gère le clic sur le bouton "Nous contacter"
+       * Redirige vers la page de contact Colicoli
+       */
       function bindContactBtn() {
         const btn = document.querySelector('.contact-btn');
         if (btn) btn.addEventListener('click', function() {
@@ -119,6 +238,10 @@
         });
       }
 
+      /**
+       * Gère le clic sur le bouton "Réessayer"
+       * Permet de revenir au formulaire précédent
+       */
       function bindRetryBtn() {
         const btn = document.querySelector('.retry-btn');
         if (btn) btn.addEventListener('click', function() {
@@ -126,48 +249,91 @@
         });
       }
 
+      /**
+       * Gestion des événements du formulaire de vérification
+       * Cette fonction gère la validation et la vérification des codes d'identification
+       */
       function bindFormEvents() {
         const input = document.querySelector('.input-id');
         const btn = document.querySelector('.verify-btn');
         const msg = document.querySelector('.verify-message');
+        
+        // Événement de clic sur le bouton "Vérifier le livreur"
         btn.addEventListener('click', function() {
+          // Récupération et nettoyage de la valeur saisie
           const value = input.value.trim();
+          
+          // Vérification 1: Si le champ est vide
           if (!value) {
             msg.textContent = '';
             input.focus();
             return;
           }
+          
+          // Vérification 2: Validation du format (exactement 8 chiffres)
+          // Regex: ^\d{8}$ = commence par un chiffre, suivi de 7 autres chiffres, puis fin
           if (!/^\d{8}$/.test(value)) {
             msg.textContent = 'Le numéro doit contenir exactement 8 chiffres.';
             msg.style.color = '#b80000';
             input.focus();
             return;
           }
-          if (/^2100\d{2}38$/.test(value)) {
-            history.pushState({page: 'success', num: value}, '', '');
-            renderSuccess(value);
+          
+          // Vérification 3: Validation du code spécifique Colicoli
+          // Format attendu: 21XXXX38 où XXXX sont quatre chiffres quelconques
+          // Exemples valides: 21000138, 21123438, 21999938, etc.
+          // Regex: ^21\d{4}38$ = commence par "21", suivi de 4 chiffres, puis "38"
+          if (/^21\d{4}38$/.test(value)) {
+            // Codes spéciaux pour afficher les fiches des livreurs
+            if (value === '21123438') {
+              history.pushState({page: 'driver_info', num: value}, '', '');
+              renderDriverInfo(value);
+            } else if (value === '21456738') {
+              history.pushState({page: 'driver_info', num: value}, '', '');
+              renderDriverInfoSimon(value);
+            } else {
+              // Code valide standard: affichage du succès
+              history.pushState({page: 'success', num: value}, '', '');
+              renderSuccess(value);
+            }
           } else {
+            // Code invalide: affichage de l'erreur
             history.pushState({page: 'error'}, '', '');
             renderError();
           }
         });
+        
+        // Événement de saisie: effacement des messages d'erreur en temps réel
         input.addEventListener('input', function() {
           msg.textContent = '';
         });
       }
 
-      // Initialisation
+      // ===== INITIALISATION DE L'APPLICATION =====
       renderForm();
+      
+      /**
+       * Gestion de la navigation dans l'historique du navigateur
+       * Permet d'afficher la bonne page quand l'utilisateur utilise les boutons précédent/suivant
+       */
       window.onpopstate = function(event) {
         if (!event.state || event.state.page === 'form') {
           renderForm();
         } else if (event.state.page === 'success') {
           renderSuccess(event.state.num);
+        } else if (event.state.page === 'driver_info') {
+          // Déterminer quelle fiche afficher selon le numéro
+          if (event.state.num === '21456738') {
+            renderDriverInfoSimon(event.state.num);
+          } else {
+            renderDriverInfo(event.state.num);
+          }
         } else if (event.state.page === 'error') {
           renderError();
         }
       };
-      // On charge la page initiale dans l'historique
+      
+      // Initialisation de l'historique avec la page du formulaire
       history.replaceState({page: 'form'}, '', '');
     });
   </script>

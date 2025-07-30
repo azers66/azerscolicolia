@@ -167,11 +167,46 @@ body {
   transition: background 0.2s;
   box-shadow: 0 4px 16px rgba(246,255,107,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
 }
-.contact-btn:hover {
-  background: #e6ef5c;
-}
+  .contact-btn:hover {
+    background: #e6ef5c;
+  }
 
-.verification-image {
+  /* Styles pour les fiches de livreur */
+  .driver-info-card {
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .info-row {
+    margin-bottom: 16px;
+  }
+
+  .info-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .info-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 4px;
+  }
+
+  .info-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .status-active {
+    color: #1a7f1a;
+  }
+
+  .verification-image {
   flex: 0 0 240px;
   display: flex;
   align-items: center;
@@ -320,5 +355,62 @@ body {
   .bottom-row {
     flex-direction: column;
     gap: 8px;
+  }
+  
+  /* Styles spécifiques pour les fiches de livreur sur mobile */
+  .verification-content div[style*="background:#f8f8f8"] {
+    padding: 16px !important;
+    margin-bottom: 16px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .verification-content div[style*="background:#f8f8f8"] > div {
+    margin-bottom: 12px !important;
+  }
+  
+  .verification-content div[style*="background:#f8f8f8"] > div:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  .verification-content div[style*="font-size:18px;font-weight:600"] {
+    font-size: 16px !important;
+    word-break: break-word !important;
+  }
+  
+  .verification-content div[style*="font-size:14px;color:#666"] {
+    font-size: 13px !important;
+  }
+  
+  .verification-content .bottom-row {
+    gap: 12px !important;
+    margin-top: 16px !important;
+  }
+  
+  .verification-content .bottom-row button {
+    font-size: 14px !important;
+    padding: 8px 16px !important;
+    white-space: nowrap !important;
+  }
+  
+  /* Styles responsives pour les fiches de livreur */
+  .driver-info-card {
+    padding: 16px !important;
+    margin-bottom: 16px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .info-row {
+    margin-bottom: 12px !important;
+  }
+  
+  .info-value {
+    font-size: 16px !important;
+    word-break: break-word !important;
+  }
+  
+  .info-label {
+    font-size: 13px !important;
   }
 }

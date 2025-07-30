@@ -281,8 +281,7 @@
           
           // Vérification 3: Validation du code spécifique Colicoli
           // Format attendu: 21XXXX38 où XXXX sont quatre chiffres quelconques
-          // Exemples valides: 21000138, 21123438, 21999938, etc.
-          // Regex: ^21\d{4}38$ = commence par "21", suivi de 4 chiffres, puis "38"
+          // Seuls les codes spéciaux 21123438 et 21456738 sont valides
           if (/^21\d{4}38$/.test(value)) {
             // Codes spéciaux pour afficher les fiches des livreurs
             if (value === '21123438') {
@@ -292,9 +291,9 @@
               history.pushState({page: 'driver_info', num: value}, '', '');
               renderDriverInfoSimon(value);
             } else {
-              // Code valide standard: affichage du succès
-              history.pushState({page: 'success', num: value}, '', '');
-              renderSuccess(value);
+              // Autres codes au format 21XXXX38: affichage de l'erreur
+              history.pushState({page: 'error'}, '', '');
+              renderError();
             }
           } else {
             // Code invalide: affichage de l'erreur
